@@ -20,6 +20,7 @@ function Login() {
         "missingPassword": false,
         "unknownError": false,
       })
+      
       if (Object.values(e)[0] === "auth/invalid-email")
         setError(prev => ({...prev, "invalidEmail": true}))
       else if (Object.values(e)[0] === "auth/missing-password")
@@ -40,11 +41,10 @@ function Login() {
       })
     }
     createUserWithEmailAndPassword(auth, user.name, user.password).then(fulfilled, reject)
-    
   };
+
   return (
     <View>
-      <Text> Create an account </Text>
       <TextInput value={user.name} placeholder="Enter your username" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
       <TextInput value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
       <Button onPress={signInWithGoogle} title='Create an Account!' />
