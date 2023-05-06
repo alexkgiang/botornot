@@ -2,10 +2,11 @@ import React from "react"
 import { View, Text, Button } from "react-native"
 import { auth } from "../../firebase/config";
 
-export default function ChatRoom() {
+export default function ChatRoom({ setSignedIn }) {
   const signOut = async () => {
     try {
       await auth.signOut()
+      setSignedIn(false);
     } catch (error) {
       console.error('Error signing out:', error)
     }

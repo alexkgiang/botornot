@@ -4,7 +4,7 @@ import { auth } from '../../firebase/config';
 
 import { View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
 
-function Login() {
+function SignUp({ setShowSignUp }) {
   const [user, setUser] = useState({"name": "", "password": ""})
   const [error, setError] = useState({
     "duplicateAccount": false,
@@ -53,8 +53,9 @@ function Login() {
       <Text>{error.missingPassword && "Missing password"}</Text>
       <Text>{error.invalidEmail && "Invalid email"}</Text>
       <Text>{error.unknownError && "Some unknown error occurred"}</Text>
+      <Button onPress={() => setShowSignUp(false)} title="Back to Sign In" />
     </View>
   );
 };
 
-export default Login;
+export default SignUp;
