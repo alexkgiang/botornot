@@ -53,7 +53,7 @@ function SignUp({ navigation }) {
       <Text>{error.missingPassword && "Missing password"}</Text>
       <Text>{error.invalidEmail && "Invalid email"}</Text>
       <Text>{error.unknownError && "Some unknown error occurred"}</Text>
-      <Button onPress={() => navigation.goBack()} title="Create an Account Instead" />
+      <Button onPress={() => navigation.navigate('SignUp')} title="Create an Account Instead" />
     </View>
   );
 };
