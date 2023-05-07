@@ -5,9 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import SignUp from "../createaccount";
 import ChatRoom from "../chatroom";
-import SignIn from '../signin';
 import AuthNavigator from '../AuthNavigator';
 
 
