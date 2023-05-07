@@ -48,11 +48,8 @@ function SignUp({ navigation }) {
       <TextInput value={user.name} placeholder="Enter your email" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
       <TextInput value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
       <Button onPress={signInWithGoogle} title='Sign In!' />
-        
-      <Text>{error.wrongPassword && "Wrong Password"}</Text>
-      <Text>{error.missingPassword && "Missing password"}</Text>
-      <Text>{error.invalidEmail && "Invalid email"}</Text>
-      <Text>{error.unknownError && "Some unknown error occurred"}</Text>
+
+      <Text>{error.wrongPassword ? "Wrong Password" : (error.missingPassword ? "Missing password" : (error.invalidEmail ? "Invalid email" : (error.unknownError ? "Some unknown error occurred" : "")))}</Text>
       <Button onPress={() => navigation.navigate('SignUp')} title="Create an Account Instead" />
     </View>
   );

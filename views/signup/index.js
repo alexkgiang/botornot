@@ -48,11 +48,9 @@ function SignUp({ navigation }) {
       <TextInput value={user.name} placeholder="Enter your email" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
       <TextInput value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
       <Button onPress={signInWithGoogle} title='Create an Account!' />
-        
-      <Text>{error.duplicateAccount && "Account already in use"}</Text>
-      <Text>{error.missingPassword && "Missing password"}</Text>
-      <Text>{error.invalidEmail && "Invalid email"}</Text>
-      <Text>{error.unknownError && "Some unknown error occurred"}</Text>
+
+      <Text>{error.duplicateAccount ? "Account already exists" : (error.missingPassword ? "Missing password" : (error.invalidEmail ? "Invalid email" : (error.unknownError ? "Error" : "")))}</Text>
+
       <Button onPress={() => navigation.goBack()} title="Back to Sign In" />
     </View>
   );
