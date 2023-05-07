@@ -45,7 +45,7 @@ function SignUp({ navigation }) {
 
   return (
     <View>
-      <TextInput value={user.name} placeholder="Enter your username" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
+      <TextInput value={user.name} placeholder="Enter your email" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
       <TextInput value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
       <Button onPress={signInWithGoogle} title='Create an Account!' />
         
