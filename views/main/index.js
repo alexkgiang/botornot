@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import ChatRoom from "../chatroom";
+import Menu from "../menu";
 import AuthNavigator from '../AuthNavigator';
 
 
@@ -17,6 +17,6 @@ export default function Main() {
   }
 
   return (
-      <ChatRoom />
+      <Menu />
   )
 }
