@@ -13,7 +13,7 @@ export default function Menu() {
 
   return (
     <SafeAreaView>
-      <Text>Welcome to the Chat Room!</Text>
+      <Text>Menu</Text>
       <Button onPress={signOut} title="Sign Out" />
     </SafeAreaView>
   )

@@ -7,13 +7,14 @@ import MultiPlayer from '../multiplayer';
 
 const Stack = createNativeStackNavigator();
 
-function AuthNavigator({}) {
+function MenuNavigator({}) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: true}} />
-      <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: true}} />
+      <Stack.Screen name="Menu" component={Menu} options={{ headerShown: true}} />
+      <Stack.Screen name="SinglePlayer" component={SinglePlayer} options={{ headerShown: true}} />
+      <Stack.Screen name="MultiPlayer" component={MultiPlayer} options={{ headerShown: true}} />
     </Stack.Navigator>
   );
 }
 
-export default AuthNavigator;
+export default MenuNavigator;

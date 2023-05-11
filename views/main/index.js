@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Menu from "../menu";
+import MenuNavigator from "../MenuNavigator";
 import AuthNavigator from '../AuthNavigator';
 
 
@@ -17,6 +17,6 @@ export default function Main() {
   }
 
   return (
-      <Menu />
+      <MenuNavigator />
   )
 }
