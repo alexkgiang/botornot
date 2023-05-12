@@ -1,11 +1,14 @@
-import { View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
+import { SafeAreaView, View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
 
-function SinglePlayer() {
+function SinglePlayer({ navigation }) {
 
   return (
-    <View>
+    <SafeAreaView>
       <Text>Singleplayer mode</Text>
-    </View>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text>back to menu</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 
 }

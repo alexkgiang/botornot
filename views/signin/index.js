@@ -2,7 +2,7 @@ import { useState,  } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/config';
 
-import { View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
+import { SafeAreaView, View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
 
 function SignUp({ navigation }) {
   const [user, setUser] = useState({"name": "", "password": ""})
@@ -44,14 +44,18 @@ function SignUp({ navigation }) {
   };
 
   return (
-    <View>
+    <SafeAreaView>
       <TextInput value={user.name} placeholder="Enter your email" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
       <TextInput value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
-      <Button onPress={signInWithGoogle} title='Sign In!' />
+      <TouchableOpacity onPress={signInWithGoogle}>
+        <Text>Sign In!</Text>
+      </TouchableOpacity>
 
       <Text>{error.wrongPassword ? "Wrong Password" : (error.missingPassword ? "Missing password" : (error.invalidEmail ? "Invalid email" : (error.unknownError ? "Some unknown error occurred" : "")))}</Text>
-      <Button onPress={() => navigation.navigate('SignUp')} title="Create an Account Instead" />
-    </View>
+      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+        <Text>Create an Account Instead</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 

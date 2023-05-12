@@ -10,9 +10,9 @@ const Stack = createNativeStackNavigator();
 function MenuNavigator({}) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Menu" component={Menu} options={{ headerShown: true}} />
-      <Stack.Screen name="SinglePlayer" component={SinglePlayer} options={{ headerShown: true}} />
-      <Stack.Screen name="MultiPlayer" component={MultiPlayer} options={{ headerShown: true}} />
+      <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false}} />
+      <Stack.Screen name="SinglePlayer" component={SinglePlayer} options={{ headerShown: false}} />
+      <Stack.Screen name="MultiPlayer" component={MultiPlayer} options={{ headerShown: false}} />
     </Stack.Navigator>
   );
 }

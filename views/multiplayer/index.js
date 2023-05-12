@@ -1,11 +1,14 @@
-import { View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
+import { SafeAreaView, View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
 
-function MultiPlayer() {
+function MultiPlayer({ navigation }) {
 
   return (
-    <View>
-      <Text>Singleplayer mode</Text>
-    </View>
+    <SafeAreaView>
+      <Text>Multiplayer mode</Text>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text>back to menu</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 
 }
