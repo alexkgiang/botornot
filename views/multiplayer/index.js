@@ -4,7 +4,7 @@ function MultiPlayer({ navigation }) {
 
   return (
     <SafeAreaView>
-      <Text>Multiplayer mode</Text>
+      <Text>Multiplayer mode, how to play:</Text>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text>back to menu</Text>
       </TouchableOpacity>

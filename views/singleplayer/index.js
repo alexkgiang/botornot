@@ -4,7 +4,7 @@ function SinglePlayer({ navigation }) {
 
   return (
     <SafeAreaView>
-      <Text>Singleplayer mode</Text>
+      <Text>Singleplayer mode, how to play:</Text>
       <TouchableOpacity onPress={() => navigation.navigate('SingleGame')}>
         <Text>start game</Text>
       </TouchableOpacity>
