@@ -2,7 +2,7 @@ import { useState,  } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/config';
 
-import { SafeAreaView, View, TouchableOpacity, Text, TextInput, Button } from 'react-native';
+import { SafeAreaView, View, TouchableOpacity, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 function SignUp({ navigation }) {
   const [user, setUser] = useState({"name": "", "password": ""})
@@ -44,19 +44,34 @@ function SignUp({ navigation }) {
   };
 
   return (
-    <SafeAreaView>
-      <TextInput value={user.name} placeholder="Enter your email" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
-      <TextInput value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
-      <TouchableOpacity onPress={signInWithGoogle}>
-        <Text>Sign In!</Text>
+    <SafeAreaView style={styles.container}>
+      <TextInput style={styles.enterUser} value={user.name} placeholder="Enter your email" onChangeText={e => setUser(prev => ({...prev, "name": e}))} keyboardType='default'/>
+      <TextInput style={styles.enterPass} value={user.password} placeholder="Enter your password" onChangeText={e => setUser(prev => ({...prev, "password": e}))} keyboardType='default'/>
+      <TouchableOpacity style={styles.signInButton} onPress={signInWithGoogle}>
+        <Text style={styles.signInButtonText}>Sign In!</Text>
       </TouchableOpacity>
 
-      <Text>{error.wrongPassword ? "Wrong Password" : (error.missingPassword ? "Missing password" : (error.invalidEmail ? "Invalid email" : (error.unknownError ? "Some unknown error occurred" : "")))}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-        <Text>Create an Account Instead</Text>
+      <Text style={styles.error}>{error.wrongPassword ? "Wrong Password" : (error.missingPassword ? "Missing password" : (error.invalidEmail ? "Invalid email" : (error.unknownError ? "Some unknown error occurred" : "")))}</Text>
+      <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('SignUp')}>
+        <Text style={styles.signUpButtonText}>Create an Account Instead</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  enterUser: {},
+  enterPass: {},
+  signInButton: {},
+  signInButtonText: {},
+  error: {},
+  signUpButton: {},
+  signUpButtonText: {},
+});
 
 export default SignUp;
