@@ -64,14 +64,60 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#f8f8f8'
   },
-  enterUser: {},
-  enterPass: {},
-  signInButton: {},
-  signInButtonText: {},
-  error: {},
-  signUpButton: {},
-  signUpButtonText: {},
+  enterUser: {
+    width: '80%',
+    height: 50,
+    paddingHorizontal: 10,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#ccc',
+    backgroundColor: '#fff'
+  },
+  enterPass: {
+    width: '80%',
+    height: 50,
+    paddingHorizontal: 10,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: '#ccc',
+    backgroundColor: '#fff'
+  },
+  signInButton: {
+    width: '80%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#3498db',
+    borderRadius: 5,
+    marginBottom: 20,
+  },
+  signInButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18
+  },
+  error: {
+    color: 'red',
+    marginBottom: 10
+  },
+  signUpButton: {
+    width: '80%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9b59b6',
+    borderRadius: 5,
+  },
+  signUpButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18
+  },
 });
+
 
 export default SignUp;
